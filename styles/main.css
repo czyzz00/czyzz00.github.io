@@ -446,3 +446,89 @@ footer {
 .wearable-right-column .wearable-image:first-child {
     margin-bottom: 20px; /* 在图片 8 下方添加间距 */
 }
+
+/* 4K分辨率（3840*2160）适配 */
+@media screen and (min-width: 2560px) {
+    .container {
+        max-width: 2000px; /* 增加容器最大宽度 */
+    }
+
+    .nav-content {
+        max-width: 2000px;
+        padding: 1.5rem 3rem;
+    }
+
+    .hero {
+        padding: 180px 0 90px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    .hero p {
+        font-size: 1.8rem;
+        max-width: 900px;
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    .section h2 {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .content-block {
+        max-width: 1400px;
+    }
+
+    .content-block p {
+        font-size: 1.4rem;
+        line-height: 2;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 30px;
+    }
+
+    .color-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .module-column h3 {
+        font-size: 2.4rem;
+    }
+
+    .module-column p {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        gap: 3rem;
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 3rem 0;
+    }
+
+    footer p {
+        font-size: 1.2rem;
+    }
+
+    .overview-main-image {
+        max-width: 70%;
+    }
+
+    .two-column-layout {
+        gap: 60px;
+    }
+
+    .image-grid {
+        gap: 30px;
+    }
+}
