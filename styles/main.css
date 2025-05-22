@@ -125,7 +125,7 @@ h1, h2, h3 {
 }
 
 .content-block p {
-    font-family: 'Lora', 'Noto Sans SC', serif;
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #2c3e50;
@@ -247,7 +247,7 @@ footer {
 }
 
 .module-column {
-    flex: 1; /* 让两列平均分配空间 */
+    flex: 1 1 0%; /* 允许增长和收缩，基础宽度为 0 */
     text-align: left; /* 确保内容左对齐 */
     display: flex; /* 将列本身也设置为 Flex 容器 */
     flex-direction: column; /* 让列内的子元素垂直排列 */
@@ -271,6 +271,7 @@ footer {
     padding-left: 0; /* 确保左内边距为零 */
     text-align: justify; /* 使文本内容两端对齐 */
     hyphens: auto; /* 启用自动断字 */
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
 }
 
 .module-gif {
@@ -280,6 +281,31 @@ footer {
     border-radius: 8px;
     margin-top: 20px; /* 控制图片与文字的间距 */
     align-self: flex-start; /* 让图片在列内左对齐 */
+}
+
+/* Wearable Device Design 图片样式 */
+.wearable-image {
+    width: 100%; /* 宽度占满父容器 */
+    height: auto; /* 高度自适应，保持比例 */
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto; /* 移除所有外边距，依赖 Flexbox 的 gap 或其他元素的 margin 创建间距 */
+    max-width: none; /* 移除最大宽度限制 */
+}
+
+.wearable-right-column {
+    display: flex; /* 使右侧列成为 Flex 容器 */
+    flex-direction: column; /* 右侧列内容垂直排列 */
+    align-items: center; /* 在垂直 Flex 容器中，使子元素（图片和占位元素）水平居中 */
+}
+
+.spacer {
+    flex-grow: 1; /* 占位元素填充剩余空间 */
+}
+
+/* Add margin to the first image in the right column */
+.wearable-right-column .wearable-image:first-child {
+    margin-bottom: 20px; /* 在图片 8 下方添加间距 */
 }
 
 /* 响应式设计 */
@@ -369,3 +395,54 @@ footer {
         padding: 0.5rem 1rem; /* 增加链接的点击区域 */
     }
 } 
+
+/* Overview 主视觉图片样式 */
+.overview-main-image {
+    display: block; /* 让图片成为块级元素，才能使用 margin: auto 居中 */
+    max-width: 80%; /* 限制图片的最大宽度，可以根据需要调整这个值 */
+    height: auto; /* 保持图片的原始纵横比 */
+    margin: 0 auto 20px auto; /* 上下外边距为 20px，左右自动，实现居中 */
+    border-radius: 8px; /* 添加一些圆角，与其它图片风格统一 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 添加阴影效果 */
+} 
+
+/* Video 板块图片样式 */
+.video-images {
+    display: flex; /* 使用 Flexbox 布局，让图片并排 */
+    gap: 20px; /* 设置图片之间的间距 */
+    margin-top: 20px; /* 设置图片容器顶部的外边距，与上面的文字隔开 */
+    justify-content: center; /* 让图片在容器中居中显示 */
+    flex-wrap: wrap; /* 当屏幕宽度不足时，允许图片换行 */
+}
+
+.video-images img {
+    max-width: 48%; /* 限制图片的最大宽度，使其可以在一行显示两个，并留出间距 */
+    height: auto; /* 保持图片的原始纵横比 */
+    border-radius: 8px; /* 添加圆角效果 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 添加阴影效果 */
+}
+
+/* Wearable Device Design 图片样式 */
+.wearable-image {
+    width: 100%; /* 宽度占满父容器 */
+    height: auto; /* 高度自适应，保持比例 */
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto; /* 移除所有外边距，依赖 Flexbox 的 gap 或其他元素的 margin 创建间距 */
+    max-width: none; /* 移除最大宽度限制 */
+}
+
+.wearable-right-column {
+    display: flex; /* 使右侧列成为 Flex 容器 */
+    flex-direction: column; /* 右侧列内容垂直排列 */
+    align-items: center; /* 在垂直 Flex 容器中，使子元素（图片和占位元素）水平居中 */
+}
+
+.spacer {
+    flex-grow: 1; /* 占位元素填充剩余空间 */
+}
+
+/* Add margin to the first image in the right column */
+.wearable-right-column .wearable-image:first-child {
+    margin-bottom: 20px; /* 在图片 8 下方添加间距 */
+}
