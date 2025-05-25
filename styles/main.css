@@ -422,27 +422,32 @@ footer {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 添加阴影效果 */
 }
 
-/* Video 区域视频容器样式 */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 宽高比 */
-    margin: 2rem 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+/* Wearable Device Design 图片样式 */
+.wearable-image {
+    width: 100%; /* 宽度占满父容器 */
+    height: auto; /* 高度自适应，保持比例 */
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto; /* 移除所有外边距，依赖 Flexbox 的 gap 或其他元素的 margin 创建间距 */
+    max-width: none; /* 移除最大宽度限制 */
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+.wearable-right-column {
+    display: flex; /* 使右侧列成为 Flex 容器 */
+    flex-direction: column; /* 右侧列内容垂直排列 */
+    align-items: center; /* 在垂直 Flex 容器中，使子元素（图片和占位元素）水平居中 */
 }
 
-/* 4K分辨率下的视频容器样式 */
+.spacer {
+    flex-grow: 1; /* 占位元素填充剩余空间 */
+}
+
+/* Add margin to the first image in the right column */
+.wearable-right-column .wearable-image:first-child {
+    margin-bottom: 20px; /* 在图片 8 下方添加间距 */
+}
+
+/* 4K分辨率（3840*2160）适配 */
 @media screen and (min-width: 2560px) {
     .container {
         max-width: 2000px; /* 增加容器最大宽度 */
@@ -526,10 +531,30 @@ footer {
     .image-grid {
         gap: 30px;
     }
+}
 
+/* Video 区域的 YouTube 视频容器样式 */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 宽高比 */
+    margin: 2rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* 4K分辨率适配 */
+@media screen and (min-width: 2560px) {
     .video-container {
         max-width: 80%;
         margin: 3rem auto;
-        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 }
